@@ -1,0 +1,319 @@
+//gallery section styling
+
+@media screen and (min-width:768px) {
+  
+  .gallery-reel[style="height: 71vh;"] {
+
+    /** Minimum Height of Gallery Container ***/
+    min-height:800px !important;
+    
+    /** Gallery Items ***/
+    .gallery-reel-item {
+
+      /**Scale Down width of images**/
+      img {
+        transform:scale(0.7);
+        transform-origin:50% 50%;
+        transition:.1s !important;
+        // border-radius:30px;
+      }
+      
+
+      /**Style Captions**/
+      .gallery-caption-reel {
+        //outline:1px solid #ccc;
+        //outline-offset:-5px;
+        height:auto !important;
+        position:absolute !important;
+        max-width:80% !important;
+       // background-color: rgba(102, 126, 245, .5);
+        //opacity: .7;
+        color:white;
+        padding:1em 2em;
+        text-align: left !important;
+        box-sizing:border-box;
+        margin-top:0;
+        transform:translate(-10% ,-110%);
+          z-index: 10;
+
+        
+        p{
+          font-size: 1.9rem;
+          font-family: 'Didot';
+          display:block;
+          //padding-bottom:0.7em;
+		  text-align: left;
+          line-height: 2.5rem;
+          letter-spacing: .05rem;
+        }
+        
+        p span{
+          color: @white;
+          display: block;
+          font-size: .8rem;
+          font-family: 'montserrat';
+          
+        }
+        p span::after{
+  background: url('https://static1.squarespace.com/static/6258749c8584fd3a695471c3/t/62ae32b6b3f5e75d7d3f35e0/1655583414746/white+arrow.png');
+  content: '';
+  height:2vw;
+  width: 2vw;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  display: inline-block;
+  transform: translate(1vw, 30%);
+  z-index: 10;
+ 
+}
+        
+        p a {
+          color: white!important;
+        }
+      }
+      
+      
+    }
+
+
+    /**Style Active Item**/
+    
+    .gallery-reel-item[data-active="true"] {
+      
+      //background-color: @blue;
+      transition: .2s !important;
+      z-index: 5 !important;
+      img {
+        transform:scale(1);
+        transition:0.5s !important;
+        opacity: 1;
+      }
+
+      a.gallery-reel-image-link::before {
+        content: "";
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        opacity: .5;
+        z-index: 2;
+        position: absolute;
+
+      }
+    }
+    
+    
+   
+	/**.gallery-reel-item[data-active="true"]:hover {
+      background-color: @blue;
+      transition: .2s !important;
+      img:hover {
+        transform:scale(1);
+        transition:0.5s !important;
+        opacity: .5;
+      }
+    }**/
+    
+    
+    
+  }
+
+
+}
+//adding cover overlay to active item
+.gallery-reel[style="height: 71vh;"] .gallery-reel-item[data-active="true"]:hover::after {
+    background-color: #667ef5;
+    transition: .2s !important;
+    z-index: 5 !important;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none !important;
+    opacity: 0.5;
+}
+
+
+.gallery-caption-content{
+  z-index: 10!important;
+}
+//STyle MOBILE
+
+/**MOBILE STYLES**/
+
+@media screen and (max-width:767px) {
+   .gallery-reel[style="height: 71vh;"] {
+     
+     /**Style Captions**/
+      .gallery-caption-reel {
+        //outline:1px solid #ccc;
+        //outline-offset:-5px;
+        height:100% !important;
+        position:absolute !important;
+        //background-color: rgba(102, 126, 245, .5);
+        //opacity: .6;
+        color:white;
+        padding:1em 2em;
+        box-sizing:border-box;
+        margin-top:0;
+        transform:translateY(-100%);
+        z-index: 100;
+
+      
+        p{
+          font-size: 1.5rem;
+          font-family: 'Didot';
+          display:block;
+          //padding-bottom:0.7em;
+		  text-align: left;
+          line-height: 2.5rem;
+          letter-spacing: .05rem;
+        }
+        
+        p span{
+          color: @white;
+          display: block;
+          font-size: .8rem;
+          font-family: 'montserrat';
+          font-weight: 500;
+        }
+        p span::after{
+  background: url('https://static1.squarespace.com/static/6258749c8584fd3a695471c3/t/62ae32b6b3f5e75d7d3f35e0/1655583414746/white+arrow.png');
+  content: '';
+  height:3vw;
+  width: 3vw;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  display: inline-block;
+  transform: translate(1vw, 2%) scale(2);
+  z-index: 10;
+ 
+
+      }
+    
+      }
+}
+}
+
+//CUSTOM ARROWS
+
+/**Remove Background of Arrows**/
+.gallery-reel-control-btn::before {
+  display:none !important;
+}
+/**Style Buttons**/
+
+@media @desktop {
+  button[aria-label="Next Slide"] {
+    .gallery-reel-control-btn-icon  {
+      width:58px;
+      height:58px;
+      svg {
+        opacity:0; 
+      }
+  
+    }
+  
+    .gallery-reel-control-btn-icon::before {
+      content:"";
+      background-image:url(https://static1.squarespace.com/static/6258749c8584fd3a695471c3/t/62a65062bb6b325467849578/1655066722271/arrow.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width:100%;
+      height:100%;
+      position:absolute;
+      background-position:center;
+      top:2vw;
+      left:-13vw;
+  
+    }
+  
+  }
+  
+  }
+  @media @mobile {
+  button[aria-label="Next Slide"] {
+    .gallery-reel-control-btn-icon  {
+      width:58px;
+      height:58px;
+      svg {
+        opacity:0; 
+      }
+  
+    }
+  
+    .gallery-reel-control-btn-icon::before {
+      content:"";
+      background-image:url(https://static1.squarespace.com/static/6258749c8584fd3a695471c3/t/62a65062bb6b325467849578/1655066722271/arrow.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width:100%;
+      height:100%;
+      position:absolute;
+      background-position:center;
+      top:-10vw;
+      left:-13vw;
+  
+    }
+  
+  }
+  
+  }
+  
+  
+  @media @desktop {button[aria-label="Previous Slide"] {
+  
+    .gallery-reel-control-btn-icon  {
+      width:58px;
+      height:58px;
+      svg {
+        opacity:0; 
+      }
+  
+    }
+  
+  
+  
+    .gallery-reel-control-btn-icon::before {
+      content:"";
+      background-image:url(https://static1.squarespace.com/static/6258749c8584fd3a695471c3/t/62ad18aad85a79235df953a3/1655511210724/left+arrow.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width:100%;
+      height:100%;
+      position:absolute;
+      background-position:center;
+      top:2vw;
+      left:13vw;
+  
+    }
+  
+    }}
+  
+  @media @mobile {button[aria-label="Previous Slide"] {
+  
+    .gallery-reel-control-btn-icon  {
+      width:58px;
+      height:58px;
+      svg {
+        opacity:0; 
+      }
+  
+    }
+  
+  
+  
+    .gallery-reel-control-btn-icon::before {
+      content:"";
+      background-image:url(https://static1.squarespace.com/static/6258749c8584fd3a695471c3/t/62ad18aad85a79235df953a3/1655511210724/left+arrow.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width:100%;
+      height:100%;
+      position:absolute;
+      background-position:center;
+      top:-10vw;
+      left:13vw;
+  
+    }
+  
+    }}

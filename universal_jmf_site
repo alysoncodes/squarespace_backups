@@ -2,13 +2,13 @@
 <script>
 window.customFilterSettings = {
     'targets': [{
-        container: '#block-yui_3_17_2_1_1703198381137_84210',// css selector for filter container
+        container: '#block-yui_3_17_2_1_1704871142392_63459',// css selector for filter container
         items: '.summary-item',// css selector for items to filter
         settings: {
             position: 'top',//set the position for filter to appear. May be: top, left, right
             align: 'center',// align filter options, may be: left, center, right, space-between
             showItemsCount: false, // show (true) or hide (false) Items count
-            collectionUrl: '/blog',// you need to set source collection url slug (like /blog) if your items have external links (not linked to themselves)
+            collectionUrl: '/imjenblog',// you need to set source collection url slug (like /blog) if your items have external links (not linked to themselves)
             itemsCount: {
                 enabled: false, // same as showItemsCount
                 text: '', // set the items text before counter, it is Items: by default and you may set your own text
@@ -18,7 +18,7 @@ window.customFilterSettings = {
             customClasses: 'lite-dropdowns',
             /* Add any custom classes to filter container if you want to have your own to use in CSS styling,
             available: cf-sort-right (move sorting element right), cf-sort-left (move sort left), lite-dropdowns(gives lighter dropdowns stylings), cf-ctrls-inline (makes dropdowns fit one line space)*/
-            view: 'buttons', // available: dropdowns, breadcrumbs, modern, buttons, buttons-round, buttons-pill, buttons-inline
+            view: 'buttons-inline', // available: dropdowns, breadcrumbs, modern, buttons, buttons-round, buttons-pill, buttons-inline
             sticky: {// if enabled: true - trying enable sticky position of Filter to be seen on scroll
                 enabled: false,
                 top: '6%'
@@ -41,7 +41,7 @@ window.customFilterSettings = {
             },
             /*----Mobile Panel Section----*/
             mobilePanel: {// control if you want to have separate offscreen panel with filters on small screens
-                enabled: true,// if set to false, no filter buttons on mobiles will be showed
+                enabled: false,// if set to false, no filter buttons on mobiles will be showed
                 triggerButtonName: 'Filter', // trigger button text
                 keepDropdownsOpen: null, // if false it overrides desktop settings, if true - dropdowns opened
                 closeOnSelect: false, // mobile panel closed just after user selected something
@@ -54,22 +54,19 @@ window.customFilterSettings = {
                 tag: false, // disabling default Tag dropdown
                 items: [{
                     name: 'Category', // give the dropdown (fiter entity) name you want
-                  showAll: true,
+                    showAll: true,
                     allLabel: "View All",
                     multiple: false, // if true, allow to select multiple options
                     logic: 'and', // how to combine dropdown options with other dropdowns logic. Other value is or
                     multipleLogic: 'or',// combine each selected option with OR or AND logic within one dropdown
                     closedSubOptions: false, // works for Products 7.1 subcategories onl
-                    sort: 'asc', // may be asc, desc, asAllowed (need define options list in allowedOptions), or your own custom function
+                    sort: 'asAllowed', // may be asc, desc, asAllowed (need define options list in allowedOptions), or your own custom function
+                    allowedOptions: "Wealth Building, Real Estate, Renovation, Design, Lifestyle",
                     getAttr: 'categories'// here you say Filter to look for options in items categories
-                }, {
-                    name: 'Tags',// give the dropdown (fiter entity) name you want
-                    multiple: true,//if true, allow to select multiple options
-                    getAttr: 'tags'// here you say Filter to look for options in items tags
                 }]
             },
             sort: {// define the sorters
-                enabled: false,// if false - no sorters visible/working
+                enabled: true,// if false - no sorters visible/working
                 //defined: 'date_desc',// select which of defined sorters will work initially
                 items: [{
                     name: 'Alphabetical',
@@ -94,7 +91,7 @@ window.customFilterSettings = {
                 }]
             },
             search: {
-                enabled: true,// if false, no Search input will be showed
+                enabled: false,// if false, no Search input will be showed
                 text: 'Search', //set the placeholder to your search field, otherwise Search will be used
             }
         }

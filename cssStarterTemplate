@@ -1,0 +1,145 @@
+/*------------------------------------
+ *   VARIABLES
+ *------------------------------------*/
+
+
+/**GLOBAL COLORS**/
+
+
+
+/**BREAKPOINTS**/
+
+@maxBP: 1649px;
+@deskBP: 768px;
+@mBP: 767px;
+
+
+/**OTHER VARIABLES**/
+
+@mobile:~"only screen and (max-width: 767px)";
+@desktop:~"only screen and (min-width: 768px)";
+@tablet: ~"only screen and (max-width: 1024px) and (min-width:768px)";
+@desktopXL: ~"only screen and (min-width: 1649px)"; 
+
+
+/*------------------------------------
+ *   MIXINS
+ *------------------------------------*/
+
+.headfont {
+
+}
+
+.buttonfont {
+    
+}
+
+/*------------------------------------
+ *   CUSTOM FONTS
+ *------------------------------------*/
+
+@font-face {
+  font-family: '';
+  src: url('') format('woff');
+}
+//paragraph font
+@font-face {
+  font-family: '';
+  src: url('') format('woff');
+}
+//h4/subheader
+@font-face {
+  font-family: '';
+  src: url('') format('woff');
+}
+//button font
+@font-face {
+  font-family: '';
+  src: url('') format('woff');
+}
+/*------------------------------------
+ *   GLOBAL STYLES
+ *------------------------------------*/
+.full-width {
+.fluid-engine {
+  --sqs-site-max-width:100vw;
+
+  --sqs-site-gutter:0vw;
+
+}
+}
+
+html {
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+
+
+.page-section:not(.user-items-list-section):not(.content-collection)>.content-wrapper {
+    box-sizing: border-box !important;
+    position: static !important
+}
+body:not(.sqs-edit-mode) {
+.sqs-row {
+ position:static !important
+}
+}
+
+a {
+  background-size:0px !important;
+  text-decoration:none !important;
+}
+
+
+
+/*------------------------------------
+ *   fonts
+ *------------------------------------*/
+
+
+
+
+
+//unhide if I want to globally remove margins
+/*
+h1,h2,h3 {
+ margin:0em !important;
+}
+*/
+
+//fluid sizes
+
+
+
+//section themes
+
+/*------------------------------------
+ *  DARK 1
+ *------------------------------------*/
+
+
+
+/*------------------------------------
+ *  HEADER
+ *------------------------------------*/
+
+
+
+/*------------------------------------
+ *  FOOTER
+ *------------------------------------*/
+
+
+
+//page specific
+
+/*------------------------------------
+ *  HOME
+ *------------------------------------*/
+
+
+/*------------------------------------
+ *  Contact
+ *------------------------------------*/
+

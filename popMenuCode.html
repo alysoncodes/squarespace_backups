@@ -27,3 +27,195 @@
 
   <script src="/s/mega-menu-71.js"></script>
 <script src="https://storage.googleapis.com/squarestylist/sectionstyles.js"></script>
+
+//css for the menu- delete this comment
+
+//hiding regular nav bar
+
+.header-nav-list{
+  display: none;
+}
+
+//variables
+
+@hamcolor: white;
+@closecolor: white;
+
+//styling the navigation
+.nav2 input[type="checkbox"]{display:none}
+
+.checkburger
+{cursor:pointer;
+display:block;
+height:auto;
+position:fixed;
+left:30px;
+top:10px;
+width:40px;
+z-index:1500;
+background:transparent;
+padding:22px 23px 29px 23px;
+border-right: 0px solid #fff;
+}
+
+
+//initial styling of hamburger
+.checkburger span
+{background:@hamcolor; 
+display:block;
+height:2px;
+margin:7px 0 0 0;
+transition:.5s ease all;
+width:40px;}
+
+
+// styling of close icon
+
+#hamburger:checked+label.checkburger::before{
+  background: url('https://static1.squarespace.com/static/63530905d18d9f25cd655899/t/6356c2327678dd7d7fbf443b/1666630194679/orange_circle.png');
+  content: '';
+  height:150px;
+  width: 165px;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  display: inline-block;
+  //transform: translate(-39vw, 5vw);
+  //z-index: 10;
+  position: absolute;
+  top: -75%;
+  left: -45%;
+
+  
+}
+
+#hamburger:checked+label.checkburger
+{border-right: none !important;}
+
+#hamburger:checked+label.checkburger .top-bun
+{background: @closecolor; 
+transform:rotate(45deg) translate(3px,3px);
+  position: fixed !important;
+}
+
+#hamburger:checked+label.checkburger .meat
+{width:0px;}
+
+#hamburger:checked+label.checkburger .bottom-bun
+{background:@closecolor;//variable
+transform:rotate(-45deg) translate(3px,-3px);
+  position: fixed;}
+
+.checkburger:checked+label.checkburger
+{position:fixed;}
+
+
+//styling of first menu
+.menu
+{
+
+height:0;
+overflow:hidden;
+position:fixed;
+left:0;
+top:0;
+transition: height .5s ease;
+width:50vw;
+z-index:1400;
+}
+
+
+
+//styling of second menu
+.menu2 {
+height:0;
+overflow:hidden;
+position:fixed;
+right:0;
+bottom:0;
+transition: height .5s ease;
+width:50vw;
+z-index:1400;}
+
+
+#hamburger:checked~.menu
+{display:block;
+height:100%;}
+
+#hamburger:checked~.menu2
+{display:block;
+height:100%;}
+
+ .section-background-content img {
+  visibility:visible !important;
+}
+
+//menu one styling- on the POP ONE page
+
+
+section[data-section-id="6355e86d6671ac225c07fee5"]{
+  .content-wrapper{
+    padding-right: 0!important;
+    padding-top: 0 !important;
+  }
+   .sqs-row {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    }
+
+}
+
+#block-6355e86df9d4b30c518fbdec{
+  margin-top: 10vw;
+}
+
+#block-yui_3_17_2_1_1666574414754_4070{
+  figure.sqs-block-image-figure{
+    margin-right: 0!important;
+  }
+}
+
+#block-6355e86df9d4b30c518fbdec a{
+  text-decoration: none;
+}
+#block-6355e86df9d4b30c518fbdec a:hover{
+  color: red;
+}
+
+
+.menu {
+  
+  .page-section {
+    height:100vh;
+  }
+   .page-section .content-wrapper {
+    padding-left:10vw !important;
+    padding-right:0vw !important;
+
+  }
+}
+
+.menu2 {
+  
+  .page-section {
+    height:100vh !important;
+    
+  }
+  .section-background img{
+    width: 50vw;
+  }
+   .page-section .content-wrapper {
+    padding-left:0vw !important;
+    padding-right:0vw !important;
+
+  }
+  
+  
+  
+}
+
+//hide popout menu on mobile, most tablets
+@media only screen and (max-width: 1024px) and (pointer: coarse), screen and (max-width: 799px) {.nav2
+{display:none;}
+}

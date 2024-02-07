@@ -1,0 +1,157 @@
+//____Quiz____//
+#quizContainer{
+  border: 1px solid black;
+  padding: 5vw 15vw 5vw 5vw;
+  background-color: white;
+}
+
+#openingSlide{
+  //text-align: center;
+  
+}
+
+button#startBtn{
+  background-color: #19302E;
+  color: white;
+  border: none;
+  padding: .7em 1em;
+  margin-top: 3rem;
+  width: 20vw;
+}
+
+@media @mobile{
+  button#startBtn{
+    width: 40vw;
+    }
+  button.quizButton{
+    width: 40vw;
+  }
+}
+button#next{
+  background-color: #19302E;
+  color: white;
+  border: none;
+  padding: .7em 1em;
+  margin-top: 3rem;
+  width: 40vw !important;
+}
+
+button#prev{
+  background-color: #ffffff;
+  color: black;
+  border: none;
+  padding: .7em 1em;
+  margin-top: 3rem;
+  margin-right: 1.5rem;
+  width: 20vw !important;
+  white-space: nowrap;
+}
+
+#openingP{
+  //text-align: center;
+  color: #F15A27;
+  //padding-left: 5vw;
+  padding-right: 15vw;
+}
+
+div#buttonContainer{
+  display: flex;
+  flex-direction: column;
+  
+  align-items: left!important;
+}
+
+@media @desktop{
+div#divResults{
+  padding-right: 10vw;
+  label {
+	display: block;
+	padding-left: 3vw;
+    margin-top: -30px;
+    
+}
+  }}
+//mobile styles for actual quiz page
+@media @mobile{
+  p#openingP{
+    padding: initial;
+  }
+  button#startBtn{
+    text-align: center !important;
+  }
+  div#buttonContainer{
+    text-align: center !important;
+    //white-space: nowrap;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  div#quizContainer{
+    padding: 2rem;
+    //text-align: center;
+  }
+div#divResults{
+  //padding-right: 10vw;
+  h2{
+    text-align: center;
+  }
+  label {
+	display: block;
+	padding-left: 5vw;
+    margin-top: -30px;
+    
+}
+  }
+  div#buttonContainer2{
+    text-align: center;
+  }
+
+}
+
+#divResults {
+  h2{
+  font-size: 2rem !important;
+  text-align: left;
+  line-height: 2.4rem !important;
+     font-family: 'montserrat' !important;
+}
+}
+@media @mobile{
+  #divResults {
+  h2{
+  font-size: 1.5rem !important;
+  line-height: 2.4rem !important;
+     font-family: 'montserrat' !important;
+}
+}
+}
+
+input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #ffffff;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid black;
+      
+    }
+
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+      	
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #F15A25;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid black;
+    }
+

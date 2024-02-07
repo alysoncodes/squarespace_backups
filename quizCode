@@ -1,0 +1,546 @@
+
+<div id="quizContainer">
+<div id="open">
+
+        
+</div>
+    
+<div id="buttonContainer">
+  <button type="button" id="startBtn" >TAKE THE QUIZ</button> 
+</div>  
+       
+      <div id="divResults">
+
+        
+
+      </div>
+<div id="buttonContainer2">
+      <button type="button" id="prev"> < Previous </button> 
+      <button type="button" id="next">Next > </button> 
+</div>
+<script>    
+        const quiz = {
+        0: {
+            "number": "Question 1 of 9",
+            "question": "You’re at a much-needed happy hour with your favorite people: What are you sipping on tonight to celebrate time with pals?",
+            "image": "https://static1.squarespace.com/static/62e021d04cf4d35fa647ef3b/t/62ffdcfa91b5994297def1b4/1660935418368/AtoZ-Clinical-1.jpg",
+            "answers": [
+                { "ans": "NA for me.",
+                "val": 1 },
+                { "ans": "I'll start with a mocktail and finish with wine. But don’t be surprised if I’m on another detox next week.",
+                "val": 2 },
+                { "ans": "Gin every now and then, but really I’m here for the fancy mixers.",
+                "val": 3 },
+                { "ans": "Did you say edibles?",
+                "val": 4 }
+                ]
+            },
+        1: {
+           "number": "Question 2 of 9",
+            "question": "You find yourself surrounded by sunshine and calming waves with nowhere else to be for hours. What are you reading?",
+            "image": "https://images.squarespace-cdn.com/content/v1/60e8722fc6bcfa0427869b69/1660318880794-EBE23TE6VGFP9DL6M5YU/Sage3.png?format=300w",
+            "answers": [
+                { "ans": "The Home Edit by Clea Shearer and Joanna Teplin.",
+                "val": 1 },
+                { "ans": "NYT Best Seller “Signs, The Secret Language of the Universe” by psychic medium Laura Lynne Jackson.",
+                "val": 2 },
+                { "ans": "Brene Brown, Atlas of the Heart",
+                "val": 3 },
+                { "ans": "Becoming, Michelle Obama",
+                "val": 4 }
+                ]
+            },
+        2: {
+            "number": "Question 3 of 9",
+            "question": "Netflix and chill? No thanks. What are you ignoring your phone (and partner) for tonight?",
+            "image": "https://images.squarespace-cdn.com/content/v1/60e8722fc6bcfa0427869b69/1660318951639-E441CWZ01HVBRLQTKEFN/Lover3.png?format=500w",
+            "answers": [
+                { "ans": "Keeping up with reality TV is my thing, Kardashians or none. I’ll be streaming Housewives, Love Island, and maybe a little Selling Sunset.",
+                "val": 1 },
+                { "ans": "Somehow I got lost in the Tiger King era of early covid and never got around to The Goop Lab. I’m so ready to learn about all the interesting things GP and the team explore.",
+                "val": 2 },
+                { "ans": "Wait, I actually don’t want to binge anything. I’ll spend the night calling my favorite people and talking on the phone until dawn.",
+                "val": 3 },
+                { "ans": "Obama narrates Our Great National Parks?! See ya in 5 hours!!",
+                "val": 4 }
+                ]
+        },
+        3: {
+            "number": "Question 4 of 9",
+            "question": "Just call you BOSS. You’re finally ready to start your big business adventure (or take on the next one). What’s the gig?",
+            "image": "https://images.squarespace-cdn.com/content/v1/60e8722fc6bcfa0427869b69/1660271688231-NDOWY9NNWOMN2FMO2COQ/Magician.gif?format=500w",
+            "answers": [
+                { "ans": "I’m currently creating an empire fueled by 7 different income streams. Multipassionate entrepreneur over here.",
+                "val": 1 },
+                { "ans": "I’ll be blending the Woo AND the Work that goes with it. I want to serve others by helping them find the best, truest versions of themselves.",
+                "val": 2 },
+                { "ans": "Making the world a better place, family first, serving people through community, volunteering… maybe no business.",
+                "val": 3 },
+                { "ans": "Whatever it is, I’ll figure it out while feeling my best doing so…",
+                "val": 4 }
+                ]
+        },
+        4: {
+           "number": "Question 5 of 9",
+            "question": "You're ready to get social! What kind of party are you going to throw?",
+            "image": "https://images.squarespace-cdn.com/content/v1/60e8722fc6bcfa0427869b69/1660319068296-4PNSYRU2GCPQJ6GM3Z0W/Jester2.png?format=500w",
+            "answers": [
+                { "ans": "A large, catered affair at home, but like, done to the NINES.",
+                "val": 1 },
+                { "ans": "A medium-sized affair with a guest list tailored to only people with unique, spiritual perspectives.",
+                "val": 2 },
+                { "ans": "Close family and friends only. I'll host a potluck at my house where guests can expect to play charades.",
+                "val": 3 },
+                { "ans": "A chill cocktail party at a historical downtown bar.",
+                "val": 4 }
+                ]
+        },
+        5: {
+            "number": "Question 6 of 9",
+            "question": "It’s official, your beloved bag finally needs to be replaced. Where will you find a worthy replacement?",
+            "image": "https://images.squarespace-cdn.com/content/v1/60e8722fc6bcfa0427869b69/1660269570175-UI2RNW0ISLENI2Y4BAO5/Hero.gif?format=500w",
+            "answers": [
+                { "ans": "There’s only one choice: Balenciaga, of course.",
+                "val": 1 },
+                { "ans": "The bag speaks to me… I’ll know it when I see it and have no expectations or desires tied to what it is.",
+                "val": 2 },
+                { "ans": "I’m always carrying too much stuff–you never know what someone might need. That's why a gorgeous, soft tote bag from a brand like Kate Spade has the perfect blend of space and class.",
+                "val": 3 },
+                { "ans": "For me, I'll scour vintage shops. Whether a great deal or an exciting rare find, the legacy and character that bag holds get's me every time.",
+                "val": 4 }
+                ]
+        },
+        6: {
+           "number": "Question 7 of 9",
+            "question": "You’ve got to run a few errands to run. What stores are you on the way to today?",
+            "image": "https://images.squarespace-cdn.com/content/v1/60e8722fc6bcfa0427869b69/1660268100470-MTDCUZAJQ942JYKK4TLH/Citizen.gif?format=500w",
+            "answers": [
+                { "ans": "I'll stop at Erewon for a smoothie. I may or may not get to my errands at all...",
+                "val": 1 },
+                { "ans": "I need a refill on my favorite beauty and wellness products. So I'm off to Sephora and Credo. I might even shop Goop.com.",
+                "val": 2 },
+                { "ans": "I’m needing a restock on glassware and some new Le Creuset. I'll head to Williams Sonoma and wrap up at Crate and Barrel.",
+                "val": 3 },
+                { "ans": "I'm off to the farmers market to grab fresh produce from my favorite family-run farm.",
+                "val": 4 }
+                ]
+        },
+        7: {
+            "number": "Question 8 of 9",
+            "question": "It’s the end of a long week. You’re starving and on your way to your favorite restaurant. What’s your perfect dinner order?",
+            "image": "https://images.squarespace-cdn.com/content/v1/60e8722fc6bcfa0427869b69/1660319153157-BQZB6Z3ZSZYGWDY2FUR2/Creator2.png?format=500w",
+            "answers": [
+                { "ans": "Nigiri sushi, made with internationally-sourced fish is the perfect way to slow down and enjoy the curated experience of unique flavors.",
+                "val": 1 },
+                { "ans": "Indian food has been eaten by some of the most spiritual people in history, so it’s the perfect cuisine for a mindful-eating meditation.",
+                "val": 2 },
+                { "ans": "Pea risotto with buffalo mozzarella and spring herbs sounds divine!",
+                "val": 3 },
+                { "ans": "Chinese noodles have a 4000+ year legacy and the variety to go along with it.",
+                "val": 4 }
+                ]
+        },
+        8: {
+            "number": "Question 9 of 9",
+            "question": "You’ve got an unlimited budget–where is your dream house located?",
+            "image": "https://images.squarespace-cdn.com/content/v1/60e8722fc6bcfa0427869b69/1660318984867-OS6BZZCDQXQG2EVWKV2D/Explorer3.png?format=500w",
+            "answers": [
+                { "ans": "I put a premium on privacy and space, but I also want to be close to a big city. A secluded mansion in Hidden Hills, California, outside of LA, would be perfect.",
+                "val": 1 },
+                { "ans": "I need a place with excellent energy and a spiritual vibe. A large house in Sedona, Arizona, with easy access to an energy vortex so I can open my third eye during extended meditation is all I want.",
+                "val": 2 },
+                { "ans": "I don’t care where I live, as long as my friends and family are close enough to make Sunday dinners and monthly parties!",
+                "val": 3 },
+                { "ans": "A chic condo in Harlem, NYC has everything I need: music, art, food, and culture steeped in the legacy of the Harlem Renaissance.",
+                "val": 4 }
+                ]
+        }
+
+    
+        };
+
+    //redirect object
+    const redirects = {
+        1: "bit.ly/HSSQuizKimK",
+        2: "bit.ly/HSSGwynethPaltrow",
+        3: "bit.ly/HSSQuizBLAKE",
+        4: "bit.ly/HSSQuizZendaya"
+    };
+
+
+    //answers array
+    answers = [];
+
+    //counter var
+    counter = 0;
+
+
+
+    //"opening" slide
+
+    $("#divResults").hide();
+    $("#next").hide();
+    $("#prev").hide();
+
+    $("#open").append("<h3 id='openingSlide'>Ready for your <em>best brand</em> yet?</h3>\
+                      <p id='openingP'>In 9 easy-to-answer questions that will take you about 5 minutes, I'll reveal your Celebrity Brand Persona. Then, you'll be armed with easy how-tos and free resources to activate your best brand yet.</p>");
+
+    //img append
+    //$("#open").append("<img src='https://images.squarespace-cdn.com/content/v1/60e8722fc6bcfa0427869b69/1660318951639-E441CWZ01HVBRLQTKEFN/Lover3.png?format=500w'>");
+
+
+    $("#startBtn").click(function() {
+
+        $("#open").remove();
+        $("#startBtn").remove();
+
+        $("#divResults").show();
+        $("#next").show();
+
+
+        //Testing Info
+        //$("#divResults").append("<p>Counter: " + counter + "</p><p>Answers Array: " + answers + "</p></br>");
+
+        //progress number append
+        $("#divResults").append("<h4>" + quiz[0].number + "</h4>");
+
+         //q append
+        $("#divResults").append("<h2>" + quiz[0].question + "</h2>");
+
+        //img append
+        //$("#divResults").append("<img src='" + quiz[0].image + "'>");
+        //console.log(quiz[0].image);
+
+      
+
+        
+
+        //a append
+        $("#divResults").append(
+            //console.log(quiz[0].answers);
+            $.each(quiz[0].answers, function(name, value) {
+                //console.log(this.ans);
+
+            $("#divResults").append("<input type='radio' id='" + this.val + "' name='question' value='" + this.val + "'>");
+
+            $("#divResults").append("<label for='" + this.val + "'>" + this.ans + "</label></br>");
+
+            })
+
+        );
+
+
+           //button disable 
+           $('button').prop("disabled", true);
+            
+           $('input[type="radio"]').on("click", function() {
+               //console.log(('input[type="radio"]:checked').length)
+             if($('input[type="radio"]:checked').length){
+               $('button').prop("disabled", false);
+             }
+           }); 
+
+
+
+
+    }); //end startBtn
+
+
+           
+    $("#next").click(function() {
+
+
+        if (counter < 7) {
+            console.log('main qs');
+
+            $("#divResults").show();
+            $("#prev").show();
+    
+    
+            //new adding to array!
+            value = parseInt($("input[name='question']:checked").val());
+            console.log(value);
+            console.log(answers);
+            answers[counter] = value;
+            counter += 1;
+
+    
+            //empty
+            $("#divResults").empty();
+    
+    
+            //Testing Info
+            //$("#divResults").append("<p>Counter: " + counter + "</p><p>Answers Array: " + answers + "</p></br>");
+    
+             //progress number append
+            $("#divResults").append("<h4>" + quiz[counter].number + "</h4>");
+          
+             //q append
+            $("#divResults").append("<h2>" + quiz[counter].question + "</h2>");
+
+            //img append
+            //$("#divResults").append("<img src='" + quiz[counter].image + "'>");
+            //console.log(quiz[counter].image);
+    
+            //a append
+            $("#divResults").append(
+                //console.log(quiz[0].answers);
+                $.each(quiz[counter].answers, function(name, value) {
+                    //console.log(this.ans);
+    
+                $("#divResults").append("<input type='radio' id='" + this.val + "' name='question' value='" + this.val + "'>");
+    
+                $("#divResults").append("<label for='" + this.val + "'>" + this.ans + "</label></br>");
+    
+                }) //for each end
+    
+                
+    
+            ); //a append end
+
+            restorePreviousAnswer();
+            
+
+        } else if (counter == 7) {
+            //console.log('next to last question');
+
+            
+
+            $("#divResults").show();
+            $("#prev").show();
+            $("#next").html("Submit Answers");
+    
+    
+            //new adding to array!
+            value = parseInt($("input[name='question']:checked").val());
+            console.log(value);
+            console.log(answers);
+            answers[counter] = value;
+            console.log(answers);
+            counter += 1;
+
+    
+            //empty
+            $("#divResults").empty();
+    
+    
+            //Testing Info
+            //$("#divResults").append("<p>Counter: " + counter + "</p><p>Answers Array: " + answers + "</p></br>");
+
+
+          //progress number append
+            $("#divResults").append("<h4>" + quiz[counter].number + "</h4>");
+    
+             //q append
+            $("#divResults").append("<h2>" + quiz[counter].question + "</h2>");
+
+            //img append
+            //$("#divResults").append("<img src='" + quiz[counter].image + "'>");
+            //console.log(quiz[counter].image);
+    
+            //a append
+            $("#divResults").append(
+                //console.log(quiz[0].answers);
+                $.each(quiz[counter].answers, function(name, value) {
+                    //console.log(this.ans);
+    
+                $("#divResults").append("<input type='radio' id='" + this.val + "' name='question' value='" + this.val + "'>");
+    
+                $("#divResults").append("<label for='" + this.val + "'>" + this.ans + "</label></br>");
+    
+                }) //for each end
+    
+                
+    
+            ); //a append end
+
+            
+
+
+        } else {
+            //console.log('quiz finished!');
+            //console.log(answers.length);
+
+            //new adding to array!
+            value = parseInt($("input[name='question']:checked").val());
+            //value = $("input[name='question']:checked").val();
+            console.log(value);
+            console.log(answers);
+            answers[counter] = value;
+            counter += 1;
+
+
+
+            //Testing Info
+            //$("#divResults").append("<p>Counter: " + counter + "</p><p>Answers Array: " + answers + "</p></br>");
+
+           
+            //redirects function
+            maxKey = redirect();
+
+            //window redirect
+            window.location.href = '//' + redirects[maxKey];
+
+            //redirect testing
+            //console.log(redirects[maxKey]);
+           
+
+        
+        }; //end elseif
+
+       
+        //button disabled without radio click
+        $('#next').prop("disabled", true);
+
+        $('input[type="radio"]').on("click", function() {
+            //console.log(('input[type="radio"]:checked').length)
+          if($('input[type="radio"]:checked').length){
+            $('#next').prop("disabled", false);
+          }
+        }); 
+
+        //enable next button
+        if (restorePreviousAnswer()) {
+            console.log('working! yay!');
+            $('#next').prop("disabled", false);  
+        }; 
+
+
+    }); //next
+
+
+
+
+
+
+    $("#prev").click(function() {
+        //console.log("prev clicked");
+
+
+        //empty
+        $("#divResults").empty();
+
+
+
+        //next btn text
+        $("#next").html("Next Question");
+
+
+        //decrement counter
+        counter -= 1;
+        //console.log(counter);
+        //console.log(answers);
+
+
+        //Testing Info
+        //$("#divResults").append("<p>Counter: " + counter + "</p><p>Answers Array: " + answers + "</p></br>");
+
+        //progress number append
+            $("#divResults").append("<h4>" + quiz[counter].number + "</h4>");
+      
+        //q append
+        $("#divResults").append("<h2>" + quiz[counter].question + "</h2>");
+
+        //img append
+        //$("#divResults").append("<img src='" + quiz[counter].image + "'>");
+        //console.log(quiz[counter].image);
+
+        //a append
+        $("#divResults").append(
+            //console.log(quiz[0].answers);
+            $.each(quiz[counter].answers, function(name, value) {
+                //console.log(this.ans);
+
+            $("#divResults").append("<input type='radio' id='" + this.ans + "' name='question' value='" + this.val + "'>");
+
+            $("#divResults").append("<label for='" + this.ans + "'>" + this.ans + "</label></br>");
+
+            })
+
+        );
+
+
+        restorePreviousAnswer();
+
+        //enable next button
+        if (restorePreviousAnswer()) {
+            console.log('working! yay!');
+            $('#next').prop("disabled", false);  
+        }; 
+
+
+    }); //prev
+        
+
+        
+
+
+
+
+//FUNCTIONS
+/*----------------------------------------------------------
+Name:	restorePreviousAnswer
+Desc:	onclick previous button, check matching radio button
+Para:	
+Retn:	"checked" radio, true
+------------------------------------------------------------*/
+var restorePreviousAnswer = function () {
+
+if (answers[counter] != null) {
+
+    $("input[name=question][value=" + answers[counter] + "]").prop("checked", true);
+    console.log('restored!');
+
+    return true;
+
+};
+
+};
+
+/*----------------------------------------------------------
+Name:	redirect
+Desc:	process answers array until redirect value is found
+Para:	
+Retn:	maxKey
+------------------------------------------------------------*/
+
+var redirect = function() {
+
+
+    //count the dupes, return as object
+    const count = answers.reduce((accumulator, value) => {
+
+        return {...accumulator, [value]: (accumulator[value] || 0) + 1};
+
+    }, {});
+
+    console.log(count);
+          
+    //find values from object and return as array
+    const values = Object.values(count);
+    console.log(values);
+
+    //find the highest number in the previous array
+    const max = Math.max(...values);
+    console.log(max);
+
+          
+    console.log(Object.keys(count)); 
+
+    //get object key using max value
+    function getObjKey(count, value) {
+
+        return Object.keys(count).find(key => count[key] === value);
+
+    };
+
+    console.log(getObjKey(count, max));
+
+
+    var maxKey = getObjKey(count, max);
+
+
+        return maxKey;
+}; 
+</script>
+

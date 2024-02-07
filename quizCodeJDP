@@ -1,0 +1,473 @@
+
+<div id="quizContainer">
+<div id="open">
+
+        
+</div>
+    
+<div id="buttonContainer">
+  <button type="button" id="startBtn" >TAKE THE QUIZ</button> 
+</div>  
+       
+      <div id="divResults">
+
+        
+
+      </div>
+<div id="buttonContainer2">
+      <button type="button" id="prev"> < Previous </button> 
+      <button type="button" id="next">Next > </button> 
+</div>
+<script>    
+        const quiz = {
+        0: {
+            "number": "Question 1 of 5",
+            "question": "Have you prepared an ideal vision and mission objectives for your business? This includes measures so you’ll know when you’ve arrived.",
+            "image": "",
+            "answers": [
+                { "ans": "Yes, we have and we live by it!",
+                "val": 1 },
+                { "ans": "We’ve got something, but it’s outdated…",
+                "val": 2 },
+                { "ans": "No, but we probably should!",
+                "val": 3 }
+                ]
+            },
+        1: {
+           "number": "Question 2 of 5",
+            "question": "Which statement best describes your business right now?",
+            "image": "",
+            "answers": [
+                { "ans": "We have several business growth opportunities available to us right now, but we need to decide which to take and what makes the most sense for our business.",
+                "val": 1 },
+                { "ans": "Good question… our business isn’t doing so hot. We’ve had problems for a while and either don’t know what it is, how to fix it, or have the bandwidth to do so.",
+                "val": 2 },
+                { "ans": "It’s doing OK. I’m not sure where my business stands. I’m ready to take it to the next level, but it’s not growing as quickly as we’d like and we’re not sure what our next steps are.",
+                "val": 3 }
+                ]
+            },
+        2: {
+            "number": "Question 3 of 5",
+            "question": "Has your company completed a SWOT analysis to determine areas of success and concern?",
+            "image": "",
+            "answers": [
+                { "ans": "Yes! We revisit this annually to ensure we’re on track!",
+                "val": 1 },
+                { "ans": "Yes, we have — but it was a while ago and a lot has changed…",
+                "val": 2 },
+                { "ans": "No, what is that?",
+                "val": 3 }
+                ]
+        },
+        3: {
+            "number": "Question 4 of 5",
+            "question": "Are you measuring against the business’s goals and objectives?",
+            "image": "",
+            "answers": [
+                { "ans": "Did you say metrics? We love metrics and it’s how we track our success and decide our quarterly goals!",
+                "val": 1 },
+                { "ans": "We track metrics for a couple areas only, but it’s hard to be consistent and we don’t understand them all.",
+                "val": 2 },
+                { "ans": "Umm…what are metrics?",
+                "val": 3 }
+                ]
+        },
+        4: {
+           "number": "Question 5 of 5",
+            "question": "Which statement best describes your current business situation?",
+            "image": "",
+            "answers": [
+                { "ans": "We’re functional and seeing growth, but there’s a significant gap between where we currently are and where we want to be.",
+                "val": 1 },
+                { "ans": "We’re making money, but it feels like it’s taking too long to get things done!",
+                "val": 2 },
+                { "ans": "The business is not doing well at the moment, and we need help!",
+                "val": 3 }
+                ]
+        }
+        };
+
+    //redirect object
+    const redirects = {
+        1: "jdpconsultco.myflodesk.com/bodram5e83",
+        2: "jdpconsultco.myflodesk.com/y03a7cds8t",
+        3: "jdpconsultco.myflodesk.com/y03a7cds8t"
+    };
+
+
+    //answers array
+    answers = [];
+
+    //counter var
+    counter = 0;
+
+
+
+    //"opening" slide
+
+    $("#divResults").hide();
+    $("#next").hide();
+    $("#prev").hide();
+
+    $("#open").append("<h3 id='openingSlide'>Opening Slide copy needed</h3>\
+                      <p id='openingP'>Opening slide copy needed.</p>");
+
+    //img append
+    //$("#open").append("<img src='https://images.squarespace-cdn.com/content/v1/60e8722fc6bcfa0427869b69/1660318951639-E441CWZ01HVBRLQTKEFN/Lover3.png?format=500w'>");
+
+
+    $("#startBtn").click(function() {
+
+        $("#open").remove();
+        $("#startBtn").remove();
+
+        $("#divResults").show();
+        $("#next").show();
+
+
+        //Testing Info
+        //$("#divResults").append("<p>Counter: " + counter + "</p><p>Answers Array: " + answers + "</p></br>");
+
+        //progress number append
+        $("#divResults").append("<h4>" + quiz[0].number + "</h4>");
+
+         //q append
+        $("#divResults").append("<h2>" + quiz[0].question + "</h2>");
+
+        //img append
+        //$("#divResults").append("<img src='" + quiz[0].image + "'>");
+        //console.log(quiz[0].image);
+
+      
+
+        
+
+        //a append
+        $("#divResults").append(
+            //console.log(quiz[0].answers);
+            $.each(quiz[0].answers, function(name, value) {
+                //console.log(this.ans);
+
+            $("#divResults").append("<input type='radio' id='" + this.val + "' name='question' value='" + this.val + "'>");
+
+            $("#divResults").append("<label for='" + this.val + "'>" + this.ans + "</label></br>");
+
+            })
+
+        );
+
+
+           //button disable 
+           $('button').prop("disabled", true);
+            
+           $('input[type="radio"]').on("click", function() {
+               //console.log(('input[type="radio"]:checked').length)
+             if($('input[type="radio"]:checked').length){
+               $('button').prop("disabled", false);
+             }
+           }); 
+
+
+
+
+    }); //end startBtn
+
+
+           
+    $("#next").click(function() {
+
+
+        if (counter < 3) {
+            console.log('main qs');
+
+            $("#divResults").show();
+            $("#prev").show();
+    
+    
+            //new adding to array!
+            value = parseInt($("input[name='question']:checked").val());
+            console.log(value);
+            console.log(answers);
+            answers[counter] = value;
+            counter += 1;
+
+    
+            //empty
+            $("#divResults").empty();
+    
+    
+            //Testing Info
+            //$("#divResults").append("<p>Counter: " + counter + "</p><p>Answers Array: " + answers + "</p></br>");
+    
+             //progress number append
+            $("#divResults").append("<h4>" + quiz[counter].number + "</h4>");
+          
+             //q append
+            $("#divResults").append("<h2>" + quiz[counter].question + "</h2>");
+
+            //img append
+            //$("#divResults").append("<img src='" + quiz[counter].image + "'>");
+            //console.log(quiz[counter].image);
+    
+            //a append
+            $("#divResults").append(
+                //console.log(quiz[0].answers);
+                $.each(quiz[counter].answers, function(name, value) {
+                    //console.log(this.ans);
+    
+                $("#divResults").append("<input type='radio' id='" + this.val + "' name='question' value='" + this.val + "'>");
+    
+                $("#divResults").append("<label for='" + this.val + "'>" + this.ans + "</label></br>");
+    
+                }) //for each end
+    
+                
+    
+            ); //a append end
+
+            restorePreviousAnswer();
+            
+
+        } else if (counter == 3) {
+            //console.log('next to last question');
+
+            
+
+            $("#divResults").show();
+            $("#prev").show();
+            $("#next").html("Submit Answers");
+    
+    
+            //new adding to array!
+            value = parseInt($("input[name='question']:checked").val());
+            console.log(value);
+            console.log(answers);
+            answers[counter] = value;
+            console.log(answers);
+            counter += 1;
+
+    
+            //empty
+            $("#divResults").empty();
+    
+    
+            //Testing Info
+            //$("#divResults").append("<p>Counter: " + counter + "</p><p>Answers Array: " + answers + "</p></br>");
+
+
+          //progress number append
+            $("#divResults").append("<h4>" + quiz[counter].number + "</h4>");
+    
+             //q append
+            $("#divResults").append("<h2>" + quiz[counter].question + "</h2>");
+
+            //img append
+            //$("#divResults").append("<img src='" + quiz[counter].image + "'>");
+            //console.log(quiz[counter].image);
+    
+            //a append
+            $("#divResults").append(
+                //console.log(quiz[0].answers);
+                $.each(quiz[counter].answers, function(name, value) {
+                    //console.log(this.ans);
+    
+                $("#divResults").append("<input type='radio' id='" + this.val + "' name='question' value='" + this.val + "'>");
+    
+                $("#divResults").append("<label for='" + this.val + "'>" + this.ans + "</label></br>");
+    
+                }) //for each end
+    
+                
+    
+            ); //a append end
+
+            
+
+
+        } else {
+            //console.log('quiz finished!');
+            //console.log(answers.length);
+
+            //new adding to array!
+            value = parseInt($("input[name='question']:checked").val());
+            //value = $("input[name='question']:checked").val();
+            console.log(value);
+            console.log(answers);
+            answers[counter] = value;
+            counter += 1;
+
+
+
+            //Testing Info
+            //$("#divResults").append("<p>Counter: " + counter + "</p><p>Answers Array: " + answers + "</p></br>");
+
+           
+            //redirects function
+            maxKey = redirect();
+
+            //window redirect
+            window.location.href = '//' + redirects[maxKey];
+
+            //redirect testing
+            //console.log(redirects[maxKey]);
+           
+
+        
+        }; //end elseif
+
+       
+        //button disabled without radio click
+        $('#next').prop("disabled", true);
+
+        $('input[type="radio"]').on("click", function() {
+            //console.log(('input[type="radio"]:checked').length)
+          if($('input[type="radio"]:checked').length){
+            $('#next').prop("disabled", false);
+          }
+        }); 
+
+        //enable next button
+        if (restorePreviousAnswer()) {
+            console.log('working! yay!');
+            $('#next').prop("disabled", false);  
+        }; 
+
+
+    }); //next
+
+
+
+
+
+
+    $("#prev").click(function() {
+        //console.log("prev clicked");
+
+
+        //empty
+        $("#divResults").empty();
+
+
+
+        //next btn text
+        $("#next").html("Next Question");
+
+
+        //decrement counter
+        counter -= 1;
+        //console.log(counter);
+        //console.log(answers);
+
+
+        //Testing Info
+        //$("#divResults").append("<p>Counter: " + counter + "</p><p>Answers Array: " + answers + "</p></br>");
+
+        //progress number append
+            $("#divResults").append("<h4>" + quiz[counter].number + "</h4>");
+      
+        //q append
+        $("#divResults").append("<h2>" + quiz[counter].question + "</h2>");
+
+        //img append
+        //$("#divResults").append("<img src='" + quiz[counter].image + "'>");
+        //console.log(quiz[counter].image);
+
+        //a append
+        $("#divResults").append(
+            //console.log(quiz[0].answers);
+            $.each(quiz[counter].answers, function(name, value) {
+                //console.log(this.ans);
+
+            $("#divResults").append("<input type='radio' id='" + this.ans + "' name='question' value='" + this.val + "'>");
+
+            $("#divResults").append("<label for='" + this.ans + "'>" + this.ans + "</label></br>");
+
+            })
+
+        );
+
+
+        restorePreviousAnswer();
+
+        //enable next button
+        if (restorePreviousAnswer()) {
+            console.log('working! yay!');
+            $('#next').prop("disabled", false);  
+        }; 
+
+
+    }); //prev
+        
+
+        
+
+
+
+
+//FUNCTIONS
+/*----------------------------------------------------------
+Name:	restorePreviousAnswer
+Desc:	onclick previous button, check matching radio button
+Para:	
+Retn:	"checked" radio, true
+------------------------------------------------------------*/
+var restorePreviousAnswer = function () {
+
+if (answers[counter] != null) {
+
+    $("input[name=question][value=" + answers[counter] + "]").prop("checked", true);
+    console.log('restored!');
+
+    return true;
+
+};
+
+};
+
+/*----------------------------------------------------------
+Name:	redirect
+Desc:	process answers array until redirect value is found
+Para:	
+Retn:	maxKey
+------------------------------------------------------------*/
+
+var redirect = function() {
+
+
+    //count the dupes, return as object
+    const count = answers.reduce((accumulator, value) => {
+
+        return {...accumulator, [value]: (accumulator[value] || 0) + 1};
+
+    }, {});
+
+    console.log(count);
+          
+    //find values from object and return as array
+    const values = Object.values(count);
+    console.log(values);
+
+    //find the highest number in the previous array
+    const max = Math.max(...values);
+    console.log(max);
+
+          
+    console.log(Object.keys(count)); 
+
+    //get object key using max value
+    function getObjKey(count, value) {
+
+        return Object.keys(count).find(key => count[key] === value);
+
+    };
+
+    console.log(getObjKey(count, max));
+
+
+    var maxKey = getObjKey(count, max);
+
+
+        return maxKey;
+}; 
+</script>
+

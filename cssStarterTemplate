@@ -91,7 +91,27 @@ a {
   text-decoration:none !important;
 }
 
+/*------------------------------------
+ *   Custom Classes / repeated code
+ *------------------------------------*/
 
+
+//sticky sections
+
+body:not(.sqs-edit-mode-active) { .sticky { 
+  position:sticky; 
+  top:0; 
+  } 
+  #sections.sticky .page-section { 
+    transform: translate3d(0,0,0) !important;
+  }
+}
+
+//target image name 
+.fe-block:has(img[src*='floating']) .fluid-image-container {
+
+
+}
 
 /*------------------------------------
  *   fonts
@@ -132,6 +152,16 @@ h1,h2,h3 {
 
 
 
+
+////FIX IG ISSUE	
+#block-yui_3_17_2_1_1636585898984_19999{img.loaded{
+top: 0!important;
+}}
+.sqs-gallery-design-strip-slide img{
+object-fit: cover;
+}
+
+
 //page specific
 
 /*------------------------------------
@@ -143,3 +173,28 @@ h1,h2,h3 {
  *  Contact
  *------------------------------------*/
 
+/*------------------------------------
+ *  KEEP AT THE BOTTOM
+ *------------------------------------*/
+
+//To disable sticky on edit mode, add to the bottom of css panel:
+
+body.sqs-edit-mode-active {	
+#sections .page-section {	
+position:relative !important;	
+}	
+}
+
+//hiding markdown on load
+
+.markdown-block p {
+animation:fadeEnter 2s forwards;
+}
+@keyframes fadeEnter {
+0% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}

@@ -91,6 +91,48 @@ a {
   text-decoration:none !important;
 }
 
+/** Fluid Video Block- video fit into grid**/
+
+
+.video-block {
+  .sqs-native-video .native-video-player {
+    padding-top: 0 !important;
+  }
+
+  .video-player .plyr__poster {
+    object-fit:cover !important;
+    background-size:cover !important;
+  }
+  
+  .video-player .plyr video {
+  object-fit: cover !important;
+}
+  .embed-block-wrapper {
+    height: 100% !important;
+  }
+  .intrinsic {
+    height: 100% !important;
+  }
+
+  .sqs-block-content {
+    height: 100% !important;
+  }
+
+  .sqs-native-video {
+    height: 100% !important;
+  }
+  
+  
+}
+
+.is-being-dragged {
+    .sqs-block-video{
+      display:none;
+    }
+  }
+
+
+
 /*------------------------------------
  *   Custom Classes / repeated code
  *------------------------------------*/

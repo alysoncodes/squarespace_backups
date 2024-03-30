@@ -57,6 +57,26 @@
   font-family: '';
   src: url('') format('woff');
 }
+
+/*------------------------------------
+ *   font assignments
+ *------------------------------------*/
+
+
+
+
+
+//unhide if I want to globally remove margins
+/*
+h1,h2,h3 {
+ margin:0em !important;
+}
+*/
+
+//fluid sizes
+
+
+
 /*------------------------------------
  *   GLOBAL STYLES
  *------------------------------------*/
@@ -155,23 +175,6 @@ body:not(.sqs-edit-mode-active) { .sticky {
 
 }
 
-/*------------------------------------
- *   fonts
- *------------------------------------*/
-
-
-
-
-
-//unhide if I want to globally remove margins
-/*
-h1,h2,h3 {
- margin:0em !important;
-}
-*/
-
-//fluid sizes
-
 
 
 //section themes
@@ -181,12 +184,42 @@ h1,h2,h3 {
  *------------------------------------*/
 
 
-
 /*------------------------------------
  *  HEADER
  *------------------------------------*/
+//force mobile menu
+.header-display-desktop .header-burger {
+display:flex !important;
+order:2;
+}
+.header--menu-open {
+  .header-menu {
+     opacity:1;
+    visibility:visible;   
+  }
+  .header-menu-bg {
+    background-color:#DDD1C3;
+  }
+}
+@media screen and (min-width:767px) {
+  .header-menu {
+    height:50vh;
+  }
 
+  .header-menu-nav-item a {
+    font-size:2vw !important; /**Change Font Size**/
+  }
 
+  .header-menu-nav-folder-content {
+    flex-direction:row;
+    align-items:center;
+  }
+  
+  .header-nav-wrapper {
+    display:none;
+  }
+}
+//end forced mobile
 
 /*------------------------------------
  *  FOOTER

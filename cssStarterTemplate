@@ -38,24 +38,28 @@
  *   CUSTOM FONTS
  *------------------------------------*/
 
-@font-face {
-  font-family: '';
-  src: url('') format('woff');
+ @font-face {
+  font-family: 'MyWebFont';
+  src:  url('myfont.woff2') format('woff2'),
+        url('myfont.woff') format('woff');
 }
 //paragraph font
 @font-face {
-  font-family: '';
-  src: url('') format('woff');
+  font-family: 'MyWebFont';
+  src:  url('myfont.woff2') format('woff2'),
+        url('myfont.woff') format('woff');
 }
 //h4/subheader
 @font-face {
-  font-family: '';
-  src: url('') format('woff');
+  font-family: 'MyWebFont';
+  src:  url('myfont.woff2') format('woff2'),
+        url('myfont.woff') format('woff');
 }
 //button font
 @font-face {
-  font-family: '';
-  src: url('') format('woff');
+  font-family: 'MyWebFont';
+  src:  url('myfont.woff2') format('woff2'),
+        url('myfont.woff') format('woff');
 }
 
 /*------------------------------------

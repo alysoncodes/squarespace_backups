@@ -37,18 +37,21 @@
 /*------------------------------------
  *   CUSTOM FONTS
  *------------------------------------*/
-
+//heading
  @font-face {
   font-family: 'MyWebFont';
   src:  url('myfont.woff2') format('woff2'),
         url('myfont.woff') format('woff');
 }
+:root{--heading-font-font-family:'MyWebFont';}
 //paragraph font
 @font-face {
   font-family: 'MyWebFont';
   src:  url('myfont.woff2') format('woff2'),
         url('myfont.woff') format('woff');
 }
+:root{--body-font-font-family:'MyWebFont';}
+
 //h4/subheader
 @font-face {
   font-family: 'MyWebFont';
@@ -61,6 +64,7 @@
   src:  url('myfont.woff2') format('woff2'),
         url('myfont.woff') format('woff');
 }
+:root{--primary-button-font-font-family:'MyWebFont';--secondary-button-font-font-family:'MyWebFont';--tertiary-button-font-font-family:'MyWebFont';}
 
 /*------------------------------------
  *   font assignments

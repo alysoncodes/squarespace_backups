@@ -1,0 +1,83 @@
+
+<style>
+.hide {
+  display: none;
+  color: black;
+  
+}
+
+  @media only screen and (min-width: 768px) {
+  .myDIV{
+    width: 50vw;
+    float: right;
+  }
+.myDIV:hover + .hide {
+  display: block;
+  position: absolute;
+  color: black;
+  float: left;
+  width: 40vw;
+}
+  .myDIV:hover + .hide:hover {
+  color: #344199; /* Text color on hover */
+  }
+}
+
+  .myDIV h2{
+    text-align: right;
+    line-height: 4rem;
+  }
+</style>
+
+
+<div class="myDIV"><h2>Architecture</h2></div>
+<div class="hide">Site Planning<br>
+Code Review<br>
+Master Planning<br>
+City and Variance Coordination<br>
+Consultant Coordination<br>
+Concept Development<br>
+3D Realistic Renderings<br>
+Construction Documentation<br>
+Value Engineering<br>
+Bid Review<br>
+Contractor Coordination</div>
+
+<div class="myDIV"><h2>Interior Design</h2></div>
+<div class="hide">Mood Boards<br>
+Concept Development<br>
+Planning Studies<br>
+3D Realistic Renderings<br>
+Finish, Fixture and Hardware Selection<br>
+Custom Cabinetry, Millwork and Furniture Design<br>
+Architectural Brand Graphics<br>
+Construction Documentation</div>
+
+<div class="myDIV"><h2 id="mobilestyle">Furniture + Fixture Procurement</h2></div>
+<div class="hide">Selection
+Design<br>
+Specifications<br>
+Purchasing<br>
+Installation</div>
+
+<div class="myDIV"><h2 id="mobilestyle">Construction Administration</h2></div>
+<div class="hide">Liaison Between Contractor and Owner<br>
+Project Management<br>
+Bid Review<br>
+Value Engineering<br>
+Site Visits<br>
+Quality and Progress Checks<br>
+Submittal and Shop Drawing Review<br>
+Pay Application Review<br>
+Final Punch List</div>
+  
+
+<div class="myDIV"><h2>Landscape Design</h2></div>
+<div class="hide">Coordinate Variances<br>
+Coordinate with Surveyor<br>
+Conceptual Development<br>
+Finish Selections</div>
+
+
+
+

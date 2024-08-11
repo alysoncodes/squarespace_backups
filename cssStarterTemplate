@@ -282,6 +282,15 @@ position:relative !important;
 }	
 }
 
+//fix sticky mobile issue 
+body:not(.sqs-edit-mode-active) {
+
+  
+#sections .page-section {
+    transform: translate3d(0,0,0) !important
+}
+}
+
 //hiding markdown on load
 
 .markdown-block p {
